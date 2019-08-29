@@ -1,0 +1,20 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "Express REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": ".\\node_modules\\.bin\\cucumber-js"
+  },
+  "author": "Alexey",
+  "license": "MIT",
+  "dependencies": {
+    "cucumber": "^5.1.0",
+    "express": "^4.17.1",
+    "md5": "^2.2.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sqlite3": "^4.1.0"
+  }
+}
