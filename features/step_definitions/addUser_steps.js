@@ -9,7 +9,7 @@ const generateRandomPrefix = Math.random().toString(36).replace(/[^a-z]+/g, '').
 let user;
 
 Given(/^the user name "([^"]*)" and email "([^"]*)" and password "([^"]*)"$/, function (name, email, password) {
-    user = new User(generateRandomPrefix + name, generateRandomPrefix + email, password);
+    user = new User(name, generateRandomPrefix + email, password);
   });
 
 When(/^they are sent in POST request to user endpoint "([^"]*)"$/, function (uriUser) {
@@ -20,7 +20,7 @@ When(/^then send GET request to users endpoint "([^"]*)"$/, function (uriUsers) 
     requests.sendGet(uriUsers);
   });
 
-Then(/^user name "([^"]*)" should be in the list of users$/, async function (name) {
-    ifExists = await requests.verifyUserName(generateRandomPrefix + name);
+Then(/^user with email "([^"]*)" should be in the list of users$/, async function (email) {
+    ifExists = await requests.verifyUserEmail(generateRandomPrefix + email);
     assert.equal(ifExists, true)
   });
