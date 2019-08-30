@@ -5,9 +5,9 @@ const requests = require('../../lib/requests');
 
 const generateRandomPrefix = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
 
-
 let user;
 let receivedUser;
+let responseMessage;
 
 Given(/^the user name "([^"]*)" and email "([^"]*)" and password "([^"]*)"$/, function (name, email, password) {
     user = new User(name, generateRandomPrefix + email, password);
@@ -33,4 +33,17 @@ Then(/^user with email "([^"]*)" should be in the list of users$/, async functio
   Then(/^the user with name "([^"]*)" and email "([^"]*)" should be in the response$/, function (name, email) {
     assert.equal(receivedUser.name, name);
     assert.equal(receivedUser.email, generateRandomPrefix + email);
+  });
+
+  When(/^send DELETE request to delete the user by id$/, async function () {
+    responseMessage = await requests.deleteUserById(user.id);
+  });
+
+  Then(/^the response message should be "([^"]*)"$/, async function (message) {
+    assert.equal(responseMessage, message);
+  });
+
+  Then(/^user with email "([^"]*)" should not be in the list of users$/, async function (email) {
+    ifExists = await requests.verifyUserEmail(generateRandomPrefix + email);
+    assert.equal(ifExists, false);
   });

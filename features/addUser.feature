@@ -8,3 +8,6 @@ Feature: Add, get, delete a user
         Then user with email "morpheus-overlord@mailinator.com" should be in the list of users
         When send GET request to get the user by id
         Then the user with name "morpheus" and email "morpheus-overlord@mailinator.com" should be in the response
+        When send DELETE request to delete the user by id
+        Then the response message should be "deleted"
+        And user with email "morpheus-overlord@mailinator.com" should not be in the list of users
