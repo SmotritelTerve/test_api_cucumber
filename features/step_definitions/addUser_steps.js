@@ -20,6 +20,7 @@ When(/^then send GET request to users endpoint "([^"]*)"$/, function (uriUsers) 
     requests.sendGet(uriUsers);
   });
 
-Then(/^user name "([^"]*)" should be in the list of users$/, function (name) {
-    assert.equal(requests.verifyUserName(generateRandomPrefix + name), true)
+Then(/^user name "([^"]*)" should be in the list of users$/, async function (name) {
+    ifExists = await requests.verifyUserName(generateRandomPrefix + name);
+    assert.equal(ifExists, true)
   });
