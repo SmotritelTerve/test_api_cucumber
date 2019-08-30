@@ -1,6 +1,6 @@
 # API testing with JavaScript : Cucumber JS
 
-A test project learn API testing it with [request-promise](https://github.com/request/request-promise) and [Cucumber JS](https://cucumber.io/docs/installation/javascript/).
+A test project to learn API testing with [request-promise](https://github.com/request/request-promise) and [Cucumber JS](https://cucumber.io/docs/installation/javascript/).
 
 The [test API](https://github.com/fraigo/node-express-rest-api-example) is based on Node JS, Express and SQLite.
 
@@ -9,7 +9,7 @@ The [test API](https://github.com/fraigo/node-express-rest-api-example) is based
 Clone the project and run the server.
 
 ```node
-npm start
+npm startgit sta
 ```
 
 ## Usage
