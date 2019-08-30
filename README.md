@@ -1,7 +1,8 @@
 # API testing with JavaScript : Cucumber JS
 
-A test project learn API testing it with Cucumber JS.
-The test API is based on Node JS, Express and SQLite.
+A test project learn API testing it with [request-promise](https://github.com/request/request-promise) and [Cucumber JS](https://cucumber.io/docs/installation/javascript/).
+
+The [test API](https://github.com/fraigo/node-express-rest-api-example) is based on Node JS, Express and SQLite.
 
 ## Installation
 
