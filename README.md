@@ -9,7 +9,7 @@ The [test API](https://github.com/fraigo/node-express-rest-api-example) is based
 Clone the project and run the server.
 
 ```node
-npm startgit sta
+npm start
 ```
 
 ## Usage
